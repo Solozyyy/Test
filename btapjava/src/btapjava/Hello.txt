@@ -1,0 +1,30 @@
+package btapjava;
+
+import java.util.Scanner;
+import static java.lang.Math.*;
+import java.math.BigInteger;
+import java.util.*;
+
+
+public class Btapjava {    
+    
+    public static void main(String[] args) throws Exception {
+        Scanner sc = new Scanner(System.in);
+        
+        String input = sc.useDelimiter("\\A").next();
+        
+        sc.close();
+        String[] a = input.split("\\s+");
+        int ans = 0;
+        String tmp = "";
+        for(String x : a){
+            if(x.length() > ans){
+                ans = x.length();
+                tmp = x;
+            }
+        }
+        System.out.println(tmp + " - " + ans);
+    }
+}
+
+

@@ -1,47 +1,41 @@
 package btapjava;
 
 import java.util.*;
+import static java.lang.Math.*;
 
-public class Btapjava {
-    static int turn(String a, String b) {
-        if (a.length() != b.length()) {
-            return -1;
-        }
-        String s = a;
-        for (int i = 0; i <= a.length(); i++) {
-            if (s.compareTo(b) == 0) {
-                return i;
-            }
-            s = s.substring(1) + s.charAt(0);
-        }
-        return -1;
+class NV{
+    private String ten, gend, ngaySinh, diaChi, fax, ngay;
+    
+    public NV(){}
+    
+    public String xuLyNgaySinh(String ngaysinh){
+        StringBuilder sb = new StringBuilder(ngaysinh);
+        if(sb.charAt(1) == '/') sb.insert(0, "0");
+        if(sb.charAt(4) == '/') sb.insert(3, "0");
+        return sb.toString();
     }
-
-    static void solve(String[] a) {
-        int ans = 1000000;
-        for (String i : a) {
-            int cnt = 0;
-            for (String j : a) {
-                int x = turn(j, i);
-                if (x == -1) {
-                    System.out.println(-1);
-                    return;
-                }
-                cnt += x;
-            }
-            ans = Math.min(ans, cnt);
-        }
-        System.out.println(ans);
+    
+    public NV(String ten, String gend, String ngaySinh, String dc, String fax, String ngay){
+        this.ten = ten;
+        this.gend = gend;
+        this.ngaySinh = ngaySinh;
+        this.diaChi = dc;
+        this.fax = fax;
+        this.ngay = ngay;
     }
-
-    public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-        int n = sc.nextInt();
-        String[] a = new String[n];
-        for (int i = 0; i < a.length; i++) {
-            a[i] = sc.next();
-        }
-        solve(a);
+    
+    public String toString(){
+        return "00001 " + this.ten + " " + this.gend + " " + this.ngaySinh + " " + this.diaChi + " " + this.fax + " " + this.ngay;
     }
 }
 
+
+public class Btapjava {
+
+    public static void main(String[] args) throws Exception{
+        Scanner sc = new Scanner(System.in);
+        NV nv = new NV(sc.nextLine(), sc.nextLine(), sc.nextLine(), sc.nextLine(), sc.nextLine(), sc.nextLine());
+        System.out.println(nv);
+    }
+   
+}

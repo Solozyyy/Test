@@ -2,6 +2,8 @@
 package TaiKhoan;
 
 import java.util.*;
+import MayBay.ThongTinGhe;
+import MayBay.ThongTinMayBay;
 
 public class testcode {
     public static void main(String[] args) {
@@ -10,6 +12,11 @@ public class testcode {
         
         // Tạo đối tượng ThongTinTaiKhoan và truyền đối tượng nguoiDung
         ThongTinTaiKhoan t = new ThongTinTaiKhoan("helloae", "123345", n);
-        System.out.println(t);
+        //System.out.println(t);
+        ThongTinGhe g = new ThongTinGhe("A1", true);
+        
+        ThongTinMayBay b = new ThongTinMayBay("3h", "Tu22M3", "JetA123", "Ha Noi", "Ca Mau", g);
+        System.out.println(b);
+    
     }
 }

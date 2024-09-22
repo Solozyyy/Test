@@ -4,6 +4,7 @@ package TaiKhoan;
 import java.util.*;
 import MayBay.ThongTinGhe;
 import MayBay.ThongTinMayBay;
+import ThongTinVe.Ve;
 
 public class testcode {
     public static void main(String[] args) {
@@ -17,6 +18,8 @@ public class testcode {
         
         ThongTinMayBay b = new ThongTinMayBay("3h", "Tu22M3", "JetA123", "Ha Noi", "Ca Mau", g);
         System.out.println(b);
-    
+        
+        Ve v = new Ve("123", b, n);
+        System.out.println(v);
     }
 }
